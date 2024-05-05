@@ -1,7 +1,7 @@
 import { images } from "../constants";
 
 export default users = [
-    {username: 'abdou' , email: 'bedoushop@gmail.com' , password: 'admin', role: 'admin', image: images.logoV2, PaymentMethod: ['Cash'], dob:'19/08/2000'},
+    {username: 'abdou' , email: 'bedoushop@gmail.com' , password: '21232f297a57a5a743894a0e4a801fc3', role: 'admin', image: images.logoV2, PaymentMethod: ['Cash'], dob:'19/08/2000'},
     {username: 'abdou2' , email: 'bedoushop@gmail.com1' , password: 'test', role: 'user', image: '', PaymentMethod: [], dob:'19/08/2000'},
     {username: 'abdou3' , email: 'bedoushop@gmail.com2' , password: 'test', role: 'user', image: '', PaymentMethod: [], dob:'19/08/2000'},
     {username: 'abdou4' , email: 'bedoushop@gmail.com3' , password: 'test', role: 'user', image: '', PaymentMethod: [], dob:'19/08/2000'},

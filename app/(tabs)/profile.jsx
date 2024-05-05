@@ -68,11 +68,7 @@ const profile = () => {
               </View>
           </View>
 
-          <Image
-            source={user?.image}
-            resizeMode="contain"
-            className="w-[115px] h-[34px]"
-          />
+
 
           <Text className="text-3xl font-semibold text-white mt-10 font-psemibold">
           Parametre
@@ -82,9 +78,7 @@ const profile = () => {
 
           
           {/* kkjljk */}
-          <Text className="text-2xl font-semibold text-white mt-10 font-psemibold">
-          Welcome { user.username }
-          </Text>
+
 
          
           <Text className="text-1xl pt-1 font-semibold text-white mt-10 font-psemibold">

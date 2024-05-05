@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
-
+import md5 from 'crypto-js/md5';
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
 import { useGlobalContext } from "../../context/createContext";
@@ -11,8 +11,10 @@ import users from "../../context/users";
 const userAuth = (form) => {
   const emailUser = form.email
   const passwordUser = form.password
+  const hashedPassword = md5(passwordUser).toString();
 
-  const user = users.find(user => user.email === emailUser && user.password === passwordUser);
+
+  const user = users.find(user => user.email === emailUser && user.password === hashedPassword);
   
   return user;
 }
