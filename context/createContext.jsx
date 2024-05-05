@@ -5,7 +5,7 @@ const GlobalContext = createContext();
 export const useGlobalContext = () => useContext(GlobalContext);
 const GlobalProvider = ({ children }) => {
     const user01 = {
-        email: 'bedou@k.com',
+        email: 'bedoushop@gmail.com',
         username: 'abdou',
         password: 'abdou',
         role: 'admin',

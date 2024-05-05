@@ -39,7 +39,7 @@ const Welcome = () => {
             <Text className="text-3xl text-white font-bold text-center">
               Discover Endless{"\n"}
               Possibilities with{" "}
-              <Text className="text-secondary-200">Aora</Text>
+              <Text className="text-secondary-200">bedou</Text>
             </Text>
 
             <Image
@@ -51,7 +51,7 @@ const Welcome = () => {
 
           <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
             Where Creativity Meets Innovation: Embark on a Journey of Limitless
-            Exploration with Aora
+            Exploration with bedou
           </Text>
           {
             isLogged ? (

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import GlobalProvider from "../context/createContext";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -39,6 +40,8 @@ const RootLayout = () => {
   return (
     <GlobalProvider>
       <Stack>
+        {/* <Stack.Screen name="Destination"  options={{ headerShown: false }}  /> */}
+        <Stack.Screen name="Destination/[Book]" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="index" options={{ headerShown: false }} />
