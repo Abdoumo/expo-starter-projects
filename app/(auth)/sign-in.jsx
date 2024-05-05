@@ -6,6 +6,16 @@ import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
 import { useGlobalContext } from "../../context/createContext";
+import users from "../../context/users";
+
+const userAuth = (form) => {
+  const emailUser = form.email
+  const passwordUser = form.password
+
+  const user = users.find(user => user.email === emailUser && user.password === passwordUser);
+  
+  return user;
+}
 
 const SignIn = () => {
   const { setUser, setIsLogged } = useGlobalContext();
@@ -23,11 +33,17 @@ const SignIn = () => {
     setSubmitting(true);
 
     try {
-      setUser(result);
-      setIsLogged(true);
+      const UserLogin = userAuth(form);
 
-      Alert.alert("Success", "User signed in successfully");
-      router.replace("/home");
+      if(UserLogin){
+        setUser(UserLogin);
+        setIsLogged(true);
+        router.replace("/home");
+        
+      }else {
+        Alert.alert("You are wrong", "Mistake on the passwor/email");
+      }
+
     } catch (error) {
       Alert.alert("Error", error.message);
     } finally {
@@ -45,7 +61,7 @@ const SignIn = () => {
           }}
         >
           <Image
-            source={images.logo}
+            source={images.logoV2}
             resizeMode="contain"
             className="w-[115px] h-[34px]"
           />

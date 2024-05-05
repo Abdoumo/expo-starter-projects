@@ -27,7 +27,6 @@ const DestinationCard = ({item, navigation})=>{
     const [isFavourite, toggleFavourite] = useState(false);
     const navigateToDestination = () => {
         const items =  JSON.stringify(item)
-        // console.log(items, 'itemskljdkgjkdfjdklfgjdfgljldfgjd')
         router.push({
             pathname: 'Destination/[Book]',
             params: {item :items}
