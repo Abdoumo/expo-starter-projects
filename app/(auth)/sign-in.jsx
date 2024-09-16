@@ -54,7 +54,7 @@ const SignIn = () => {
   };
 
   return (
-    <SafeAreaView className="bg-primary h-full">
+    <SafeAreaView className="bg-thirdley h-full">
       <ScrollView>
         <View
           className="w-full flex justify-center h-full px-4 my-6"
@@ -63,13 +63,13 @@ const SignIn = () => {
           }}
         >
           <Image
-            source={images.logoV2}
+            source={images.AlloTabibi}
             resizeMode="contain"
-            className="w-[115px] h-[34px]"
+            className="w-[205px] h-[115px]"
           />
 
           <Text className="text-2xl font-semibold text-white mt-10 font-psemibold">
-            Log in to bedou
+            Log in to Allo Tabibi
           </Text>
 
           <FormField

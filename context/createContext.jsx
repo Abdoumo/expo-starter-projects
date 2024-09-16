@@ -14,6 +14,10 @@ const GlobalProvider = ({ children }) => {
         image: images?.logoV2
     
     }
+  // const [isLogged, setIsLogged] = useState(true);
+  // const [user, setUser] = useState(user01);
+  // const [loading, setLoading] = useState(true);
+
   const [isLogged, setIsLogged] = useState(true);
   const [user, setUser] = useState(user01);
   const [loading, setLoading] = useState(true);

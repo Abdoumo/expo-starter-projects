@@ -14,32 +14,28 @@ const Welcome = () => {
   if (!loading && isLogged) return <Redirect href="/home" />;
 
   return (
-    <SafeAreaView className="bg-primary h-full">
+    <SafeAreaView className="bg-fourtley h-full">
       {/* <Loader isLoading={loading} /> */}
 
       <ScrollView
+      className='bg-thirdley'
         contentContainerStyle={{
           height: "100%",
         }}
       >
         <View className="w-full flex justify-center items-center h-full px-4">
-          <Image
-            source={images.logoV2}
-            className="w-[130px] h-[84px]"
-            resizeMode="contain"
-          />
 
           <Image
-            source={images.cards}
+            source={images.AlloTabibi}
             className="max-w-[380px] w-full h-[298px]"
             resizeMode="contain"
           />
 
           <View className="relative mt-5">
             <Text className="text-3xl text-white font-bold text-center">
-              Discover Endless{"\n"}
-              Possibilities with{" "}
-              <Text className="text-secondary-200">bedou</Text>
+            instant doctor{"\n"}
+            consultations {" "}
+              <Text style={{color:'#ec2329'}} className="text-secondary-200">AlloTabibi</Text>
             </Text>
 
             <Image
@@ -50,8 +46,7 @@ const Welcome = () => {
           </View>
 
           <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
-            Where Creativity Meets Innovation: Embark on a Journey of Limitless
-            Exploration with bedou
+          Allo Tabibi is a healthcare app that connects users with doctors for quick consultations, appointments, and medical advice, ensuring convenient access to healthcare services.
           </Text>
           {
             isLogged ? (
@@ -72,7 +67,7 @@ const Welcome = () => {
         </View>
       </ScrollView>
 
-      <StatusBar backgroundColor="#161622" style="light" />
+      <StatusBar backgroundColor="#1361be" style="light" />
     </SafeAreaView>
   );
 };

@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image, Linking, Alert } from 'react-native'
 import React, { useState } from 'react'
 import { destinationData } from '../constants'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -6,6 +6,9 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { HeartIcon } from 'react-native-heroicons/solid';
 import { useNavigation } from '@react-navigation/native';
 import { Redirect, router } from "expo-router";
+
+
+
 
 export default function Destinations() {
     const navigation = useNavigation();
@@ -25,6 +28,22 @@ export default function Destinations() {
 
 const DestinationCard = ({item, navigation})=>{
     const [isFavourite, toggleFavourite] = useState(false);
+    console.log(item, '**************')
+    const openWhatsApp = () => {
+        const phoneNumber = '+213541885897';  // Replace with the actual number
+        const message = `hello it's Me i'm here for  ${item?.title}`;    // Replace with your message
+        const url = item.title === 'rendez vous' ? 'https://files.fm/f/vxhr9n8jr6' :  `whatsapp://send?text=${encodeURIComponent(message)}&phone=${phoneNumber}`;
+        
+        Linking.canOpenURL(url)
+          .then(supported => {
+            if (supported) {
+              return Linking.openURL(url);
+            } else {
+              Alert.alert(item.title === 'rendez vous' ? 'Error Cannot open this URL' :  'WhatsApp is not installed on your device  Error');
+            }
+          })
+          .catch(err => console.error('An error occurred', err));
+      };
     const navigateToDestination = () => {
         const items =  JSON.stringify(item)
         router.push({
@@ -34,7 +53,7 @@ const DestinationCard = ({item, navigation})=>{
       };
     return (
         <TouchableOpacity
-            onPress={navigateToDestination}
+            onPress={openWhatsApp}
             style={{width: wp(44), height: wp(65)}}
             className="flex justify-end relative p-4 py-6 space-y-2 mb-5">
                 <Image

@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import GlobalProvider from "../context/createContext";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import { Slot } from 'expo-router'
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -37,12 +36,15 @@ const RootLayout = () => {
     return null;
   }
 
+  const publishableKey = 'pk_test_dGlkeS13aWxkY2F0LTguY2xlcmsuYWNjb3VudHMuZGV2JA'; // Replace this with your Clerk frontend API key
+
+
   return (
     <GlobalProvider>
       <Stack>
         {/* <Stack.Screen name="Destination"  options={{ headerShown: false }}  /> */}
         <Stack.Screen name="Destination/[Book]" options={{ headerShown: false }} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(home)" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="search/[query]" options={{ headerShown: false }} />
