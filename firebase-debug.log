@@ -1,0 +1,29 @@
+[debug] [2024-09-17T07:35:25.046Z] ----------------------------------------------------------------------
+[debug] [2024-09-17T07:35:25.048Z] Command:       /usr/bin/node /usr/bin/firebase init
+[debug] [2024-09-17T07:35:25.049Z] CLI Version:   13.13.2
+[debug] [2024-09-17T07:35:25.049Z] Platform:      linux
+[debug] [2024-09-17T07:35:25.050Z] Node Version:  v18.20.4
+[debug] [2024-09-17T07:35:25.050Z] Time:          Tue Sep 17 2024 08:35:25 GMT+0100 (Central European Standard Time)
+[debug] [2024-09-17T07:35:25.050Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-17T07:35:25.059Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-09-17T07:35:25.104Z] > refreshing access token with scopes: []
+[debug] [2024-09-17T07:35:25.106Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-09-17T07:35:25.107Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-17T07:35:25.415Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-09-17T07:35:25.415Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-17T07:35:25.503Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-17T07:35:25.504Z] > authorizing via signed-in user (bedoushop@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/abdou/AoraTabibi
+
+[debug] [2024-09-17T07:35:25.770Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-09-17T07:35:25.771Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}

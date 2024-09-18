@@ -6,6 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { HeartIcon } from 'react-native-heroicons/solid';
 import { useNavigation } from '@react-navigation/native';
 import { Redirect, router } from "expo-router";
+import { useGlobalContext } from '../context/createContext';
 
 
 
@@ -27,30 +28,24 @@ export default function Destinations() {
 
 
 const DestinationCard = ({item, navigation})=>{
+  const { user } = useGlobalContext();
     const [isFavourite, toggleFavourite] = useState(false);
-    console.log(item, '**************')
     const openWhatsApp = () => {
-        const phoneNumber = '+213541885897';  // Replace with the actual number
-        const message = `hello it's Me i'm here for  ${item?.title}`;    // Replace with your message
-        const url = item.title === 'rendez vous' ? 'https://files.fm/f/vxhr9n8jr6' :  `whatsapp://send?text=${encodeURIComponent(message)}&phone=${phoneNumber}`;
+        const phoneNumber = '+213559230000';  // Replace with the actual number
+        const message = `hello it's ${user.displayName} with email of ${user.email} i'm here for  ${item?.title}`;    // Replace with your message
+        const url = item.title === 'conseille' ? 'https://files.fm/f/vxhr9n8jr6' :  `whatsapp://send?text=${encodeURIComponent(message)}&phone=${phoneNumber}`;
         
         Linking.canOpenURL(url)
           .then(supported => {
             if (supported) {
               return Linking.openURL(url);
             } else {
-              Alert.alert(item.title === 'rendez vous' ? 'Error Cannot open this URL' :  'WhatsApp is not installed on your device  Error');
+              Alert.alert(item.title === 'conseille' ? 'Error Cannot open this URL' :  'WhatsApp is not installed on your device  Error');
             }
           })
           .catch(err => console.error('An error occurred', err));
       };
-    const navigateToDestination = () => {
-        const items =  JSON.stringify(item)
-        router.push({
-            pathname: 'Destination/[Book]',
-            params: {item :items}
-        });
-      };
+
     return (
         <TouchableOpacity
             onPress={openWhatsApp}

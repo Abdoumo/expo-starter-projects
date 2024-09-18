@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "AorraV2",
+    "name": "allotabibi",
     "slug": "AorraV2",
-    "scheme": "Aora",
+    "scheme": "allotabibi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,19 +16,32 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dragonocean.allotabibi"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.dragonocean.allotabibi"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e9dbf930-1bb4-4b69-888a-a79bfddd9250"
+      }
+    },
+    "sdkVersion": "51.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "owner": "aboud00001"
   }
 }

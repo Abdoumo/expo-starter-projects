@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
-
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
+import { auth } from '../../firebase';
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
 
@@ -15,6 +16,52 @@ const SignUp = () => {
     password: "",
   });
 
+  const SignUpFOrm = async (e) => {
+  
+    // Check for empty fields
+    if (form.username === "" || form.email === "" || form.password === "") {
+      return Alert.alert("Error", "Please fill in all fields");
+    }
+  
+    setSubmitting(true); // Set the submitting state
+  
+    try {
+      // Create user with Firebase Authentication
+      const userCredential = await createUserWithEmailAndPassword(auth, form.email, form.password);
+    
+      // Update user profile with the username
+      await updateProfile(userCredential.user, { displayName: form.username });
+      
+      // Log the updated user info to verify the displayName is saved
+      console.log("Updated user:", userCredential.user);
+    
+      // Navigate to sign-in screen only after updating the profile
+      router.replace("/sign-in");
+    } 
+    catch (error) {
+      // Catch and display error message
+      Alert.alert("Error", error.message);
+    } finally {
+      setSubmitting(false); // Reset submitting state
+    }
+  };
+  
+    
+
+        // try {
+
+        //   router.replace("/home");
+        // } catch (error) {
+        //   Alert.alert("Error", error.message);
+        // } finally {
+        //   setSubmitting(false);
+        // }
+        // set(ref(db), {
+          
+
+        // }).then(alert('submitted')).catch(err => alert(err))
+
+
   const submit = async () => {
     if (form.username === "" || form.email === "" || form.password === "") {
       Alert.alert("Error", "Please fill in all fields");
@@ -23,7 +70,7 @@ const SignUp = () => {
     setSubmitting(true);
     try {
 
-      router.replace("/home");
+      router.replace("/sign-in");
     } catch (error) {
       Alert.alert("Error", error.message);
     } finally {
@@ -74,7 +121,7 @@ const SignUp = () => {
 
           <CustomButton
             title="Sign Up"
-            handlePress={submit}
+            handlePress={SignUpFOrm}
             containerStyles="mt-7"
             isLoading={isSubmitting}
           />

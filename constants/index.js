@@ -8,7 +8,7 @@ export const categoriesData = [
         title: 'conseille',
         image: require('../assets/images/ocean.png'),
         categoie: "Popular",
-        link: "wa.me/+213541885897"
+        link: "wa.me/+213559230000"
     },
     {
         title: 'consultation',
@@ -18,8 +18,8 @@ export const categoriesData = [
 
 
     {
-        title: 'televisite',
-        image: require('../assets/images/beach.png'),
+        title: 'teleconsultation',
+        image: require('../assets/images/images.jpeg'),
         categoie: "Popular"
     },
     {
@@ -42,9 +42,9 @@ export const destinationData = [
     },
     
     {
-        title: 'televisite',
+        title: 'teleconsultation',
         shortDescription: "Babusar Top is a mountain pass in Pakistan at the north of the 150 km long in beautiful Kaghan Valley",
-        image: require('../assets/images/3.jpg')
+        image: require('../assets/images/images.jpeg')
     },
     {
         title: 'rendez vous',

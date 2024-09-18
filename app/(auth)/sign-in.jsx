@@ -2,30 +2,66 @@ import { useState } from "react";
 import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
-import md5 from 'crypto-js/md5';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
 import { useGlobalContext } from "../../context/createContext";
-import users from "../../context/users";
-
-const userAuth = (form) => {
-  const emailUser = form.email
-  const passwordUser = form.password
-  const hashedPassword = md5(passwordUser).toString();
+import { signInWithEmailAndPassword } from "firebase/auth"
+import { auth } from '../../firebase';
 
 
-  const user = users.find(user => user.email === emailUser && user.password === hashedPassword);
-  
-  return user;
-}
+
 
 const SignIn = () => {
-  const { setUser, setIsLogged } = useGlobalContext();
+  const { setUser,user, setIsLogged } = useGlobalContext();
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
+
+
+
+  const OnFinish = async () => {
+    if (form.email === "" || form.password === "") {
+      Alert.alert("Error", "Please fill in all fields");
+      return;
+    }
+  
+    try {
+      setSubmitting(true);
+  
+      const userCredential = await signInWithEmailAndPassword(auth, form.email, form.password);
+      
+      // Storing the user data in AsyncStorage
+      await AsyncStorage.setItem('UserLogin', JSON.stringify(userCredential.user));
+  
+      // Logging the user data that was just stored
+      console.log('User stored in AsyncStorage:', userCredential.user);
+  
+      setUser(userCredential.user);
+  
+      // Retrieving and logging the user data from AsyncStorage
+      const savedUser = await AsyncStorage.getItem('UserLogin');
+      console.log('Retrieved User from AsyncStorage:', JSON.parse(savedUser));
+  
+      if (userCredential) {
+        setIsLogged(true);
+        router.replace("/home");
+      } else {
+        Alert.alert("You are wrong", "Mistake on the password/email");
+      }
+  
+    } catch (error) {
+      Alert.alert("Error", error.message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+  
+  
+
+
 
   const submit = async () => {
     if (form.email === "" || form.password === "") {
@@ -89,7 +125,7 @@ const SignIn = () => {
 
           <CustomButton
             title="Sign In"
-            handlePress={submit}
+            handlePress={OnFinish}
             containerStyles="mt-7"
             isLoading={isSubmitting}
           />
