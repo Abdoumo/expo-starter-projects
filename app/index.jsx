@@ -35,7 +35,7 @@ const Welcome = () => {
             <Text className="text-3xl text-white font-bold text-center">
             instant doctor{"\n"}
             consultations {" "}
-              <Text style={{color:'#ec2329'}} className="text-secondary-200">AlloTabibi</Text>
+              <Text style={{color:'#ec2329'}} className="text-secondary-200">Health Blue</Text>
             </Text>
 
             <Image
@@ -46,7 +46,7 @@ const Welcome = () => {
           </View>
 
           <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
-          Allo Tabibi is a healthcare app that connects users with doctors for quick consultations, appointments, and medical advice, ensuring convenient access to healthcare services.
+          Allo Tabibi is a healthcare app that connects users with doctors for quick service Allo Tabibis, appointments, and medical advice, ensuring convenient access to healthcare services.
           </Text>
           {
             isLogged ? (
@@ -67,7 +67,7 @@ const Welcome = () => {
         </View>
       </ScrollView>
 
-      <StatusBar backgroundColor="#1361be" style="light" />
+      <StatusBar backgroundColor="#1c93d4" style="light" />
     </SafeAreaView>
   );
 };

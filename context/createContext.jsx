@@ -16,7 +16,7 @@ const GlobalProvider = ({ children }) => {
   // const [user, setUser] = useState(user01);
   // const [loading, setLoading] = useState(true);
 
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(AsyncStorage.getItem('UserLogin') !== undefined ? true : false);
   const [user, setUser] = useState(AsyncStorage.getItem('UserLogin') || {});
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(false);

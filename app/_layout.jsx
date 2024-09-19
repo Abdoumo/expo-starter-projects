@@ -36,14 +36,13 @@ const RootLayout = () => {
     return null;
   }
 
-  const publishableKey = 'pk_test_dGlkeS13aWxkY2F0LTguY2xlcmsuYWNjb3VudHMuZGV2JA'; // Replace this with your Clerk frontend API key
 
 
   return (
     <GlobalProvider>
       <Stack>
         {/* <Stack.Screen name="Destination"  options={{ headerShown: false }}  /> */}
-        <Stack.Screen name="Destination/[Book]" options={{ headerShown: false }} />
+        <Stack.Screen name="ACons" options={{ headerShown: false }} />
         <Stack.Screen name="(home)" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="index" options={{ headerShown: false }} />

@@ -8,15 +8,14 @@ import { useGlobalContext } from '../../context/createContext';
 const ios = Platform.OS=='ios';
 const topMargin = ios? 'mt-3': 'mt-10';
 export default function HomeScreen() {
-  const { setUser,user, setIsLogged } = useGlobalContext();
+  const { user } = useGlobalContext();
 
-  console.log(user, 'user')
   return (
     <SafeAreaView className="flex-1 bg-white">
       <ScrollView showsVerticalScrollIndicator={false} className={"space-y-6 "+topMargin}>
         {/* avatar */}
         <View className="mx-5 flex-row justify-between items-center mb-10">
-          <Text style={{fontSize: wp(7)}} className="font-bold text-neutral-700"> hi {user?.displayName} </Text>
+          <Text style={{fontSize: wp(7)}} className="font-bold text-neutral-700"> welcome {user?.displayName} </Text>
           <TouchableOpacity>
             <Image source={require('../../assets/images/avatar.png')} style={{height: wp(12), width: wp(12)}} />
           </TouchableOpacity>

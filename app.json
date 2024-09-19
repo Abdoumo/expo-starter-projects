@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "allotabibi",
+    "name": "Health Blue by Allotabibi",
     "slug": "AorraV2",
     "scheme": "allotabibi",
     "version": "1.0.0",
@@ -37,7 +37,6 @@
         "projectId": "e9dbf930-1bb4-4b69-888a-a79bfddd9250"
       }
     },
-    "sdkVersion": "51.0.0",
     "platforms": [
       "ios",
       "android"

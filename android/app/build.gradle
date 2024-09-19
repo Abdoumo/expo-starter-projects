@@ -110,7 +110,7 @@ android {
     compileSdk rootProject.ext.compileSdkVersion
 
     namespace 'com.dragonocean.allotabibi'
-    namespace 'com.rnmaps.maps'
+    //namespace 'com.rnmaps.maps'
     defaultConfig {
         applicationId 'com.dragonocean.allotabibi'
         minSdkVersion rootProject.ext.minSdkVersion

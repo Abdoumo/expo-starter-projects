@@ -31,10 +31,7 @@ const SignUp = () => {
     
       // Update user profile with the username
       await updateProfile(userCredential.user, { displayName: form.username });
-      
-      // Log the updated user info to verify the displayName is saved
-      console.log("Updated user:", userCredential.user);
-    
+          
       // Navigate to sign-in screen only after updating the profile
       router.replace("/sign-in");
     } 

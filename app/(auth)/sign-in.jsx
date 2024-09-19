@@ -35,16 +35,12 @@ const SignIn = () => {
       
       // Storing the user data in AsyncStorage
       await AsyncStorage.setItem('UserLogin', JSON.stringify(userCredential.user));
-  
-      // Logging the user data that was just stored
-      console.log('User stored in AsyncStorage:', userCredential.user);
-  
+      
+      // Logging the user data that was just stored  
       setUser(userCredential.user);
   
       // Retrieving and logging the user data from AsyncStorage
       const savedUser = await AsyncStorage.getItem('UserLogin');
-      console.log('Retrieved User from AsyncStorage:', JSON.parse(savedUser));
-  
       if (userCredential) {
         setIsLogged(true);
         router.replace("/home");

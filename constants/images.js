@@ -7,6 +7,7 @@ import logo from "../assets/images/logo.png";
 import logoSmall from "../assets/images/logo-small.png";
 import empty from "../assets/images/empty.png";
 import logoV2 from "../assets/images/logoV2.png"
-import one from "../assets/images/1.jpg"
+import one from "../assets/images/one.jpeg"
+import renouv from "../assets/images/renouv.jpeg"
 
-export default { profile, thumbnail, cards, path, logo, logoSmall, empty, logoV2,AlloTabibi,one };
+export default { profile, thumbnail, cards, path, logo, logoSmall, empty, logoV2,AlloTabibi,one,renouv };
